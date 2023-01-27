@@ -99,6 +99,9 @@ class NMarkerController: NSObject {
         if let subCaptionColor = json["subCaptionColor"] as? NSNumber {
             marker.subCaptionColor = toColor(colorNumber: subCaptionColor)
         }
+        if let subCaptionHaloColor = json["subCaptionHaloColor"] as? NSNumber {
+            marker.subCaptionHaloColor = toColor(colorNumber: subCaptionHaloColor)
+        }
         if let subCaptionRequestedWidth = json["subCaptionRequestedWidth"] as? CGFloat {
             marker.subCaptionRequestedWidth = subCaptionRequestedWidth
         }
@@ -108,6 +111,10 @@ class NMarkerController: NSObject {
         }
         if let imagePath = json["iconFromPath"] as? String,
            let overlayImage = toOverlayImageFromFile(imagePath: imagePath) {
+            marker.iconImage = overlayImage
+        }
+        if let imageByteArray = json["iconFromByteArray"] as? FlutterStandardTypedData,
+           let overlayImage = toOverlayImageFromByteArray(data: imageByteArray.data) {
             marker.iconImage = overlayImage
         }
         if let infoWindowText = json["infoWindow"] as? String {
