@@ -9,4 +9,5 @@ example/ios/.symlinks/
 
 .idea
 
+pubspec.lock
 **/pubspec.lock
