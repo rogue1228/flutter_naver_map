@@ -13,7 +13,6 @@ import android.content.Context
 import com.naver.maps.map.MapView
 import io.flutter.plugin.common.MethodChannel
 import com.naver.maps.map.NaverMap
-import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.LocationTrackingMode
 import io.flutter.plugin.common.MethodCall
 import com.naver.maps.map.CameraAnimation
@@ -94,7 +93,7 @@ class NaverMapController(
             onSymbolClickListener = listeners
             addOnCameraChangeListener(listeners)
             addOnCameraIdleListener(listeners)
-            locationSource = FusedLocationSource(activity, 0xAAFF)
+            locationSource = LocationSourceImpl(activity)
         }
 
         /// 초기 설정값 빈영
