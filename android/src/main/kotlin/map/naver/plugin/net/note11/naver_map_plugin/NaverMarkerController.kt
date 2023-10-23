@@ -150,7 +150,7 @@ class NaverMarkerController(
             val iconImagePath = json["iconFromPath"]
             if (iconImagePath != null) marker.icon = toOverlayImageFromPath(iconImagePath)
             val iconImageByteArray = json["iconFromByteArray"]
-            Log.e("JHC_DEBUG", "iconImageByteArray : ${iconImageByteArray}")
+//            Log.e("JHC_DEBUG", "iconImageByteArray : ${iconImageByteArray}")
             if (iconImageByteArray != null) marker.icon = toOverlayImageFromByteArray(iconImageByteArray)
 
             val infoWindow = json["infoWindow"]
