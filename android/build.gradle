@@ -2,7 +2,7 @@ group 'map.naver.plugin.net.lbstech.naver_map_plugin'
 version '1.0'
 
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.7.20'
     repositories {
         google()
         mavenCentral()
